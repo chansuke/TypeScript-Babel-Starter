@@ -1,5 +1,6 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlPlugin = require("html-webpack-plugin")
 const mode = process.env.NODE_ENV || "development"
+
 module.exports = {
   mode,
   entry: [__dirname + "/src/index.tsx"],
@@ -32,8 +33,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "src/index.html"
+    new HtmlPlugin({
+      template: "src/index.html",
+      filename: "./index.html"
     })
   ]
 }
